@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "2b43cfb8-00f4-44e3-8213-1404241ef070",
+		"name": "6_how_to_rest_api_error_codes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST_R1 - save customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \t\"customerNo\": \"customer_no_3\",\r\n\t\"firstName\": \"first_name_3\",\r\n\t\"lastName\": \"last_name_3\",\r\n\t\"dateOfBirth\": 20000103,\r\n\t\"emailAddress\": \"third_name_3@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/v1/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_R2 - start long running operation.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \t\"customerNo\": \"customer_no_3\",\r\n\t\"firstName\": \"first_name_3\",\r\n\t\"lastName\": \"last_name_3\",\r\n\t\"dateOfBirth\": 20000103,\r\n\t\"emailAddress\": \"third_name_3@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/v1/customer/endofyear",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"endofyear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT R1 - update customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \t\"customerNo\": \"customer_no_1_2\",\r\n\t\"firstName\": \"first_name_1_1\",\r\n\t\"lastName\": \"last_name_1\",\r\n\t\"dateOfBirth\": 20000101,\r\n\t\"emailAddress\": \"first_name_1@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/v1/customer/customer_no_1_2",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"customer_no_1_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE R1 - delete customer with customer no.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \t\"customerNo\": \"customer_no_1_2\",\r\n\t\"firstName\": \"first_name_1_1\",\r\n\t\"lastName\": \"last_name_1\",\r\n\t\"dateOfBirth\": 20000101,\r\n\t\"emailAddress\": \"first_name_1@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/v1/customer/customer_no_1_2",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"customer_no_1_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_R3 - GET Customer - starts with given name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/v1/customer/?firstName=first",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						""
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "first"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_R1 - GET Customer - all customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/v1/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_R2 - GET Customer - with customer no",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/v1/customer/customer_no_1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"customer_no_1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

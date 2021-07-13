@@ -84,6 +84,14 @@ public class CustomerService {
 		return customerRepository.save(customer);
 	}
 	
+	public void delete(String customerNo) {
+		validateCustomerExistence(customerNo);
+		
+		CustomerEntity existingCustomer = customerRepository.findByCustomerNo(customerNo);
+		customerRepository.delete(existingCustomer);
+		;
+	}
+	
 	private void validateCustomerNoUniqueness(String customerNo) {
 
 		if (!Objects.isNull(customerRepository.findByCustomerNo(customerNo))) {
